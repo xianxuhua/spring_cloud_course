@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: business
+  datasource:
+    username: root
+    password: 1160576878
+    url: jdbc:mysql://localhost:3306/course?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
+server:
+  port: 9002
+  servlet:
+    context-path: /business

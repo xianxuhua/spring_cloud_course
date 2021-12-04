@@ -1,0 +1,28 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: system
+          uri: lb://system
+          predicates:
+            - name: Path
+              args:
+                - /system/**
+        - id: business
+          uri: lb://business
+#          lb: load balance
+          predicates:
+            - name: Path
+              args:
+                - /business/**
+        - id: file
+          uri: lb://file
+          #          lb: load balance
+          predicates:
+            - name: Path
+              args:
+                - /file/**
